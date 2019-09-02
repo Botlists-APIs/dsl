@@ -1,0 +1,81 @@
+<%- include("../blocks/header.ejs", { title: "Edit Bot", form: false }) %>
+
+<% if (alertDanger) { %>
+    <div class="alert-danger">
+        <%- alertDanger %>
+    </div>
+<% } %>
+
+<% if (alertSuccess) { %>
+    <div class="alert-success">
+        <%- alertSuccess %>
+    </div>
+<% } %>
+
+<h3 class="category-title">Edit Bot:</h3>
+<form method="POST" class="form-container">
+    <p class="input-text">ID</p>
+    <input type="text" class="input" name="client_id" value="<%- displayBot.id %>" disabled>
+    <p class="input-text">Library</p>
+    <select name="library" class="form-select" required>
+        <option value="">Chose a library</option>
+        <option value="discord.js" <%= displayBot.library === "discord.js" ? "selected" : "" %>>Discord.Js</option>
+        <option value="Eris" <%= displayBot.library === "Eris" ? "selected" : "" %>>Eris</option>
+        <option value="discord.py" <%= displayBot.library === "discord.py" ? "selected" : "" %>>Discord.Py</option>
+        <option value="JDA" <%= displayBot.library === "discord.js" ? "selected" : "" %>>JDA</option>
+    </select>
+    <p class="input-text">Short Description</p>
+    <input type="text" name="short_description" class="input" placeholder="It's an awesome bot that can post memes." value="<%= displayBot.shortDesc %>" required>
+    <p class="input-text">Long Description</p>
+    <p class="input-label text-muted">* Supported Languages: Cascading Style Sheet (CSS), HyperText Markup Language
+        (HTML) and Markdown (MD). Minimum 250 characters.</p>
+    <textarea name="long_description" class="input-textarea" required><%= displayBot.longDesc %></textarea>
+    <p class="input-text input-text-no-margin">Prefix</p>
+    <input type="text" name="prefix" class="input" placeholder="!" value="<%= displayBot.prefix %>" required>
+    <p class="input-text">Tag 1 <span class="color-red">You need to select tags again.</span></p>
+    <select name="tag_1" class="form-select" required>
+        <option value="">(none selected)</option>
+        <option value="moderation">Moderation</option>
+        <option value="economy">Economy</option>
+        <option value="music">Music</option>
+        <option value="fun">Fun</option>
+        <option value="meme">Meme</option>
+        <option value="nsfw">NSFW</option>
+        <option value="web-dashboard">Web Dashboard</option>
+    </select>
+    <p class="input-text">Tag 2 <span class="color-red">You need to select tags again.</span></p>
+    <select name="tag_2" class="form-select">
+        <option value="">(none selected)</option>
+        <option value="moderation">Moderation</option>
+        <option value="economy">Economy</option>
+        <option value="music">Music</option>
+        <option value="fun">Fun</option>
+        <option value="meme">Meme</option>
+        <option value="nsfw">NSFW</option>
+        <option value="web-dashboard">Web Dashboard</option>
+    </select>
+    <p class="input-text">Tag 3 <span class="color-red">You need to select tags again.</span></p>
+    <select name="tag_3" class="form-select">
+        <option value="">(none selected)</option>
+        <option value="moderation">Moderation</option>
+        <option value="economy">Economy</option>
+        <option value="music">Music</option>
+        <option value="fun">Fun</option>
+        <option value="meme">Meme</option>
+        <option value="nsfw">NSFW</option>
+        <option value="web-dashboard">Web Dashboard</option>
+    </select>
+    <p class="input-text">Bot Invite Link</p>
+    <input type="text" name="bot_invite" class="input" placeholder="https://discordapp.com/oauth2/authorize?client_id=560869129310175243&permissions=8&scope=bot" value="<%= displayBot.invite %>">
+    <p class="input-text">Support Server Invite</p>
+    <input type="text" name="bot_support" class="input" placeholder="https://discord.gg/E2Ker3E" value="<%= displayBot.server %>">
+    <p class="input-text">Repository Link</p>
+    <input type="text" name="bot_repo" class="input" placeholder="https://github.com/MrAugu/DBH" value="<%= displayBot.github %>">
+    <p class="input-text">Website Link</p>
+    <input type="text" name="bot_web" class="input" placeholder="https://discordhouse.org/" value="<%= displayBot.website %>">
+    <br><br>
+    <button type="submit" class="btn btn-large">Edit Bot</button>
+</form>
+</section>
+
+<%- include("../blocks/footer.ejs") %>

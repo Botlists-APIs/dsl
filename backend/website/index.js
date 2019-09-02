@@ -166,6 +166,10 @@ module.exports.start = (client) => {
   const newPostRoute = require("./routes/postNew.js");
   const leaderboardRoute = require("./routes/leaderboard.js");
   const botPageRoute = require("./routes/botPage.js");
+  const botDeleteRoute = require("./routes/botDelete.js");
+  const botDeletePostRoute = require("./routes/botDeletePost.js");
+  const botEditRoute = require("./routes/botEdit.js");
+  const botEditPostRoute = require("./routes/postBotEdit.js");
 
   app.get("/callback", passport.authenticate("discord", { failureRedirect: "/forbidden" }), (req, res) => callbackRoute.run(req, res, session));
   app.get("/logout", (req, res) => logoutRoute.run(req, res));
@@ -176,6 +180,10 @@ module.exports.start = (client) => {
   app.post("/new", checkAuth, (req, res) => newPostRoute.run(req, res, renderTemplate, validateBotForID, client));
   app.get("/leaderboard", (req, res) => leaderboardRoute.run(req, res, renderTemplate, client));
   app.get("/bot/:term", (req, res) => botPageRoute.run(req, res, renderTemplate, client));
-  
+  app.get("/bot/:term/delete", checkAuth, (req, res) => botDeleteRoute.run(req, res, renderTemplate, client));
+  app.post("/bot/:term/delete", checkAuth, (req, res) => botDeletePostRoute.run(req, res, renderTemplate, client));
+  app.get("/bot/:term/edit", checkAuth, (req, res) => botEditRoute.run(req, res, renderTemplate, client));
+  app.post("/bot/:term/edit", checkAuth, (req, res) => botEditPostRoute.run(req, res, renderTemplate, validateBotForID, client));
+
   client.site = app.listen(client.config.dashboard.port, null, null, () => console.log("List is up and running!"));
 };

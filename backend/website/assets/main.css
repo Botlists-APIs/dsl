@@ -843,6 +843,11 @@ nav ul li a:hover {
     margin-bottom: 1em;
 }
 
+.color-red {
+  color: red;
+  font-size: 0.9em;
+}
+
 @media only screen and (min-width: 624px) {
     .leaderboard-title {
         position: relative;
