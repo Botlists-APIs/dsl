@@ -40,8 +40,8 @@ module.exports.run = async (req, res, renderTemplate, validateBotForID, client) 
 
     const newBot = new Bots({
         id: rb.id,
-        name: req.user.id,
-        mainOwner: self.username,
+        name: self.username,
+        mainOwner: req.user.id,
         owners: rb.otherOwners,
         library: rb.lib,
         upvotes: 0,
