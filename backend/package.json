@@ -1,0 +1,49 @@
+{
+  "name": "discord-bot-house-version-2",
+  "version": "0.0.1-beta",
+  "description": "A super nice second beta version of Discord Bot House.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrAugu/DBH-2.git"
+  },
+  "keywords": [
+    "discord",
+    "node",
+    "express",
+    "bot-list",
+    "bot",
+    "list"
+  ],
+  "author": "MrAugu#9016",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrAugu/DBH-2/issues"
+  },
+  "homepage": "https://github.com/MrAugu/DBH-2#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chalk": "^2.4.2",
+    "discord.js": "github:discordjs/discord.js",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "helmet": "^3.18.0",
+    "markdown": "^0.5.0",
+    "marked": "^0.6.2",
+    "memorystore": "^1.6.1",
+    "moment": "^2.24.0",
+    "moment-duration-format": "^2.2.2",
+    "mongoose": "^5.5.7",
+    "ms": "^2.1.1",
+    "node-fetch": "^2.5.0",
+    "passport": "^0.4.0",
+    "passport-discord": "^0.1.3",
+    "pretty-ms": "^5.0.0",
+    "request": "^2.88.0",
+    "valid-url": "^1.0.9"
+  }
+}

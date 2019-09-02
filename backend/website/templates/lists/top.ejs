@@ -1,0 +1,26 @@
+<%- include("../blocks/header.ejs", { title: "Home", form: true }) %>
+
+<h3 class="category-title">Top Voted Bots:</h3>
+<section class="card-wrapper">
+  <% bots.forEach(displayBot => { %>
+  <%- include("../blocks/card.ejs", { botTags: displayBot.tags, botId: displayBot.id, botInvite: displayBot.invite, botBackground: "https://images.pexels.com/photos/1020315/pexels-photo-1020315.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", botAvatar: bot.users.get(displayBot.id) ? bot.users.get(displayBot.id).displayAvatarURL({ format: "png", size: 512 }) : "", botServers: displayBot.serverCount === 0 ? "N/A" : displayBot.serverCount, botVotes: displayBot.upvotes, botName: displayBot.name, botStar: 5, botShort: displayBot.shortDesc }); %>
+  <% }); %>
+</section>
+
+<div class="pagination-wrapper">
+  <div class="pagination">
+    <% if (page !== 1) { %>
+      <a href="/top?page=<%= page - 1%>">&laquo;</a>
+    <% } %>
+
+    <% for (var i = 0; i < totalPages; i++) { %>
+    <a href="/top?page=<%= i + 1 %>" <%- (i + 1) === page ? "class='active'" : "" %>><%= i + 1 %></a>
+    <% } %>
+
+    <% if (page !== totalPages) { %>
+      <a href="/top?page=<%= page + 1%>">&raquo;</a>
+    <% } %>
+  </div>
+</div>
+
+<%- include("../blocks/footer.ejs") %>

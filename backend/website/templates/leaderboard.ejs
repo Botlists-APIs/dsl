@@ -1,0 +1,22 @@
+<%- include("blocks/header.ejs", { title: "Home", form: true }) %>
+
+<section class="leaderboard-container">
+<h1 class="leaderboard-title"><i class="fas fa-medal"></i> Karma Leaderboard:</h1>
+<table class="leaderboard-table">
+    <tr class="leaderboard-sector">
+        <th class="leaderboard-element leaderboard-th">Rank</th>
+        <th class="leaderboard-element leaderboard-th">Name</th>
+        <th class="leaderboard-element leaderboard-th">Karma</th>
+    </tr>
+    <% var s = 1; %>
+    <% users = users.filter(u => bot.users.get(u.id)) %>
+    <% for (var i = 0; i < users.length; i++) { %>
+        <tr class="leaderboard-sector">
+            <td class="leaderboard-element">#<%= s++ %></td>
+            <td class="leaderboard-element"><%= bot.users.get(users[i].id) ? bot.users.get(users[i].id).tag : "Unknown#0000" %></td>
+            <td class="leaderboard-element"><%= users[i].karma.toLocaleString() %></td>
+        </tr>
+    <% } %>
+</table>
+</section>
+<%- include("blocks/footer.ejs") %>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Viewport and Charset -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="http://localhost/assets/main.css">
+
+    <!-- Title -->
+    <title><%= title %></title>
+
+    <!-- CDNs -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body>
+    <div class="header-container">
+        <header>
+            <p class="logo"><strong>Discord Bot House</strong></p>
+           <nav>
+                <a href="#" class="hide-desktop"><i class="fas fa-bars menus menu-btn" id="menu"></i></a>
+                <ul class="show-desktop hide-mobile" id="nav">
+                    <li id="exit" class="exit-btn hide-desktop"><i class="fas fa-times exit-btn"></i></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/top">Top</a></li>
+                    <li><a href="/leaderboard">Leaderboard</a></li>
+                    <% if (!user) { %>
+                    <li><a href="/discord">Join Discord</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <% } else { %>
+                    <li><a href="/new">Add Bot</a></li>
+                    <li><a><%= user.username %>#<%= user.discriminator %></a></li>
+                    <% } %>
+                </ul>
+            </nav>
+        </header><% if (form === true) { %>
+            <section>
+                <h6 class="header-title">Discord Bot House</h6>
+                <p class="header-subtitle">Find the perfect bot for your server.</p>
+                <form action="/search" method="GET">
+                    <input type="text" class="header-input" name="name" placeholder="Enter a name..."><br>
+                    <button type="submit" class="header-btn"><i class="fas fa-search"></i></button>
+                </form>
+            </section><% } %>
+    </div>

@@ -1,0 +1,24 @@
+<%- include("blocks/header.ejs", { title: "Home", form: true }) %>
+
+<h3 class="category-title">Top Bots:</h3>
+<section class="card-wrapper">
+  <% topBots.forEach(displayBot => { %>
+    <%- include("blocks/card.ejs", { botTags: displayBot.tags, botId: displayBot.id, botInvite: displayBot.invite, botBackground: "https://images.pexels.com/photos/1020315/pexels-photo-1020315.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", botAvatar: bot.users.get(displayBot.id).displayAvatarURL({ format: "png", size: 512 }), botServers: displayBot.serverCount === 0 ? "N/A" : displayBot.serverCount, botVotes: displayBot.upvotes, botName: displayBot.name, botStar: 5, botShort: displayBot.shortDesc }); %>
+  <% }); %>
+</section>
+
+<h3 class="category-title">New Bots:</h3>
+<section class="card-wrapper">
+  <% newBots.forEach(displayBot => { %>
+    <%- include("blocks/card.ejs", { botTags: displayBot.tags, botId: displayBot.id, botInvite: displayBot.invite, botBackground: "https://images.pexels.com/photos/1020315/pexels-photo-1020315.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", botAvatar: bot.users.get(displayBot.id).displayAvatarURL({ format: "png", size: 512 }), botServers: displayBot.serverCount === 0 ? "N/A" : displayBot.serverCount, botVotes: displayBot.upvotes, botName: displayBot.name, botStar: 5, botShort: displayBot.shortDesc }); %>
+  <% }); %>
+</section>
+
+<h3 class="category-title">Featured Bots:</h3>
+<section class="card-wrapper">
+  <% featuredBots.forEach(displayBot => { %>
+    <%- include("blocks/card.ejs", { botTags: displayBot.tags, botId: displayBot.id, botInvite: displayBot.invite, botBackground: "https://images.pexels.com/photos/1020315/pexels-photo-1020315.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", botAvatar: bot.users.get(displayBot.id).displayAvatarURL({ format: "png", size: 512 }), botServers: displayBot.serverCount === 0 ? "N/A" : displayBot.serverCount, botVotes: displayBot.upvotes, botName: displayBot.name, botStar: 5, botShort: displayBot.shortDesc }); %>
+  <% }); %>
+</section>
+
+<%- include("blocks/footer.ejs") %>

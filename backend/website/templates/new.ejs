@@ -1,0 +1,90 @@
+<%- include("blocks/header.ejs", { title: "Add Bot", form: false }) %>
+
+<% if (alertDanger) { %>
+    <div class="alert-danger">
+        <%- alertDanger %>
+    </div>
+<% } %>
+
+<% if (alertSuccess) { %>
+    <div class="alert-success">
+        <%- alertSuccess %>
+    </div>
+<% } %>
+
+<h3 class="category-title">List Your Bot:</h3>
+<form method="POST" class="form-container">
+    <p class="input-text">ID (Required)</p>
+    <input type="text" class="input" name="client_id" placeholder="560869129310175243" required>
+    <p class="input-text">Library (Required)</p>
+    <select name="library" class="form-select" required>
+        <option value="">Chose a library</option>
+        <option value="discord.js">Discord.Js</option>
+        <option value="Eris">Eris</option>
+        <option value="discord.py">Discord.Py</option>
+        <option value="JDA">JDA</option>
+    </select>
+    <p class="input-text">Short Description (Required)</p>
+    <input type="text" name="short_description" class="input" placeholder="It's an awesome bot that can post memes."
+        required>
+    <p class="input-text">Long Description (Required)</p>
+    <p class="input-label text-muted">* Supported Languages: Cascading Style Sheet (CSS), HyperText Markup Language
+        (HTML) and Markdown (MD). Minimum 250 characters.</p>
+    <textarea name="long_description" class="input-textarea" required># Meme Bot
+
+This bot is a special bot that posts memes.
+  **Command List**:
+    - **help** - Gives a list of commands.
+    - **ping** - Sends a ping-pong cat gif from tenor.</textarea>
+    <p class="input-text input-text-no-margin">Prefix (Required)</p>
+    <input type="text" name="prefix" class="input" placeholder="!" required>
+    <p class="input-text">Tag 1 (Required)</p>
+    <select name="tag_1" class="form-select" required>
+        <option value="">(none selected)</option>
+        <option value="moderation">Moderation</option>
+        <option value="economy">Economy</option>
+        <option value="music">Music</option>
+        <option value="fun">Fun</option>
+        <option value="meme">Meme</option>
+        <option value="nsfw">NSFW</option>
+        <option value="web-dashboard">Web Dashboard</option>
+    </select>
+    <p class="input-text">Tag 2 (Optional)</p>
+    <select name="tag_2" class="form-select">
+        <option value="">(none selected)</option>
+        <option value="moderation">Moderation</option>
+        <option value="economy">Economy</option>
+        <option value="music">Music</option>
+        <option value="fun">Fun</option>
+        <option value="meme">Meme</option>
+        <option value="nsfw">NSFW</option>
+        <option value="web-dashboard">Web Dashboard</option>
+    </select>
+    <p class="input-text">Tag 3 (Optional)</p>
+    <select name="tag_3" class="form-select">
+        <option value="">(none selected)</option>
+        <option value="moderation">Moderation</option>
+        <option value="economy">Economy</option>
+        <option value="music">Music</option>
+        <option value="fun">Fun</option>
+        <option value="meme">Meme</option>
+        <option value="nsfw">NSFW</option>
+        <option value="web-dashboard">Web Dashboard</option>
+    </select>
+    <p class="input-text">Bot Invite Link (Optional)</p>
+    <input type="text" name="bot_invite" class="input"
+        placeholder="https://discordapp.com/oauth2/authorize?client_id=560869129310175243&permissions=8&scope=bot">
+    <p class="input-text">Support Server Invite (Optional)</p>
+    <input type="text" name="bot_support" class="input" placeholder="https://discord.gg/E2Ker3E">
+    <p class="input-text">Repository Link (Optional)</p>
+    <input type="text" name="bot_repo" class="input" placeholder="https://github.com/MrAugu/DBH">
+    <p class="input-text">Website Link (Optional)</p>
+    <input type="text" name="bot_web" class="input" placeholder="https://discordhouse.org/">
+    <p class="input-text">Verification Notes (Optional)</p>
+    <p class="input-label text-muted">* Notes the moderator will take in consideration when verifying the bot.</p>
+    <textarea name="verification_notes" class="input-textarea"></textarea>
+    <button type="submit" class="btn btn-large">Add Bot</button>
+</form>
+</section>
+
+<%- include("blocks/footer.ejs") %>

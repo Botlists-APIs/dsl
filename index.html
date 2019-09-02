@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Page</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Beggining of Header-->
+    <div class="header-container">
+        <header>
+            <p class="logo"><strong>Discord Bot House</strong></p>
+
+            <nav>
+                <a href="#" class="hide-desktop"><img src="assets/menu-bars.svg" alt="toggle menu" id="menu" class="menu"></a>
+                <ul class="show-desktop hide-mobile" id="nav">
+                    <li id="exit" class="exit-btn hide-desktop"><img src="assets/x-tick.svg" alt="toggle menu"></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/top">Top</a></li>
+                    <li><a href="/top">Leaderboard</a></li>
+                    <li><a href="/top">Join Discord</a></li>
+                    <li><a href="/top">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <h6 class="header-title">Discord Bot House</h6>
+            <p class="header-subtitle">Find the perfect bot for your server.</p>
+            <form action="#" method="GET">
+                <input type="text" class="header-input" name="name" placeholder="Enter a name..."><br>
+                <button type="submit" class="header-btn"><img src="assets/search.svg" alt="search"></button>
+            </form>
+        </section>
+    </div>
+    <!-- End Of Header -->
+    <!-- <h3 class="category-title">Top Voted Bots:</h3> -->
+    <!-- <section class="card-wrapper">
+        <div class="card">
+            <img src="assets/card-bg.jpg" alt="card background" class="card-bg">
+            <img src="assets/card-img.png" alt="card image" class="card-img">
+            <div class="card-servers">1,356<br>Servers</div><div class="card-votes">145<br>Votes</div>
+            <h1 class="card-name">Discord Bot House</h1>
+            <div class="star-wrapper"><img src="assets/star-yellow.svg" alt="star.svg" class="card-star"> 5</div>
+            <p class="card-description">Some very short description mhm.</p>
+            <div class="tag-wrapper"><span class="tag-red">Moderation</span> <span class="tag-yellow">Economy</span> <span class="tag-blue">Web Dashboard</span> <span class="tag-green">Statistics</span></div>
+            <div class="card-btn-wrapper"><a href="#" class="card-btn">View Page</a><a href="#" class="card-btn">Invite Bot</a></div>
+        </div>
+    </section> -->
+
+    <!-- <section>
+        <h3 class="category-title">List Your Bot:</h3>
+        <form method="POST" class="form-container">
+            <p class="input-text">ID (Required)</p>
+            <input type="text" class="input" name="id" placeholder="560869129310175243" required>
+            <p class="input-text">Library (Required)</p>
+            <select name="library" class="form-select" required>
+                <option value="">Chose a library</option>
+                <option value="discord.js">Discord.Js</option>
+                <option value="Eris">Eris</option>
+                <option value="discord.py">Discord.Py</option>
+                <option value="JDA">JDA</option>
+            </select>
+            <p class="input-text">Short Description (Required)</p>
+            <input type="text" name="short_description" class="input" placeholder="It's an awesome bot that can post memes." required>
+            <p class="input-text">Long Description (Required)</p>
+            <p class="input-label text-muted">* Supported Languages: Cascading Style Sheet (CSS), HyperText Markup Language (HTML) and Markdown (MD). Minimum 250 characters.</p>
+            <textarea name="long-description" class="input-textarea" required># Meme Bot
+
+This bot is a special bot that posts memes.
+  **Command List**:
+    - **help** - Gives a list of commands.
+    - **ping** - Sends a ping-pong cat gif from tenor.</textarea>
+            <p class="input-text input-text-no-margin">Prefix (Required)</p>
+            <input type="text" name="prefix" class="input" placeholder="!" required>
+            <p class="input-text">Tag 1 (Required)</p>
+            <select name="tag-1" class="form-select" required>
+                <option value="">(none selected)</option>
+                <option value="moderation">Moderation</option>
+                <option value="economy">Economy</option>
+                <option value="music">Music</option>
+                <option value="fun">Fun</option>
+                <option value="meme">Meme</option>
+                <option value="nsfw">NSFW</option>
+                <option value="web-dashboard">Web Dashboard</option>
+            </select>
+            <p class="input-text">Tag 2 (Optional)</p>
+            <select name="tag-2" class="form-select">
+                <option value="">(none selected)</option>
+                <option value="moderation">Moderation</option>
+                <option value="economy">Economy</option>
+                <option value="music">Music</option>
+                <option value="fun">Fun</option>
+                <option value="meme">Meme</option>
+                <option value="nsfw">NSFW</option>
+                <option value="web-dashboard">Web Dashboard</option>
+            </select>
+            <p class="input-text">Tag 3 (Optional)</p>
+            <select name="tag-3" class="form-select">
+                <option value="">(none selected)</option>
+                <option value="moderation">Moderation</option>
+                <option value="economy">Economy</option>
+                <option value="music">Music</option>
+                <option value="fun">Fun</option>
+                <option value="meme">Meme</option>
+                <option value="nsfw">NSFW</option>
+                <option value="web-dashboard">Web Dashboard</option>
+            </select>
+            <p class="input-text">Bot Invite Link (Optional)</p>
+            <input type="text" name="bot-invite" class="input" placeholder="https://discordapp.com/oauth2/authorize?client_id=560869129310175243&permissions=8&scope=bot">
+            <p class="input-text">Support Server Invite (Optional)</p>
+            <input type="text" name="bot-support" class="input" placeholder="https://discord.gg/E2Ker3E">
+            <p class="input-text">Repository Link (Optional)</p>
+            <input type="text" name="bot-repo" class="input" placeholder="https://github.com/MrAugu/DBH">
+            <p class="input-text">Website Link (Optional)</p>
+            <input type="text" name="bot-website" class="input" placeholder="https://discordhouse.org/">
+            <p class="input-text">Verification Notes (Optional)</p>
+            <p class="input-label text-muted">* Notes the moderator will take in consideration when verifying the bot.</p>
+            <textarea name="verification-notes" class="input-textarea"></textarea>
+            <button type="submit" class="btn btn-large">Add Bot</button>
+        </form>
+    </section> -->
+
+    <!-- Bot Page -->
+    <!-- <section class="bot-container">
+        <div class="bot-img-container"><img src="https://cdn.discordapp.com/avatars/523552979664633858/b9289282fef687dfead61233202060dd.png?size=512" alt="bot-image" class="bot-image"></div>
+        
+        <div class="center"><div class="bot-image-border"></div></div>
+        <h1 class="bot-name">Lutu</h1>
+        <p class="bot-type-text">Licensed Bot</p>
+        <ul class="bot-info-list">
+            <li class="bot-info-list-item">457<br>Upvotes</li>
+            <li class="bot-info-list-item">694<br>Servers</li>
+            <li class="bot-info-list-item">2<br>Shards</li>
+        </ul>
+        <p class="bot-title">Description:</p>
+        <p class="bot-short-description">Moderation | Automod | Lockdown Features | 24/7 Uptime | Web Dashboard</p>
+        <p class="bot-prefix-text"><strong>Prefix:</strong> <span class="code-span">? (Can be changed)</span></p>
+        <p class="bot-library-text"><strong>Library:</strong> <span class="code-span">discord.js</span></p>
+        <ul class="bot-btn-list">
+            <li><a href="#" class="bot-btn-list-item"><i class="fab fa-chrome"></i> Visit Website</a></li>
+            <li><a href="#" class="bot-btn-list-item"><i class="fab fa-github"></i> Visit Repository</a></li>
+            <li><a href="#" class="bot-btn-list-item"><i class="fab fa-discord"></i> Join Support Server</a></li>
+            <li><a href="#" class="bot-btn-list-item"><i class="fas fa-flag"></i> Report</a></li>
+            <li><a href="#" class="bot-btn-list-item"><i class="fas fa-vote-yea"></i> Upvote</a></li>
+            <li><a href="#" class="bot-btn-list-item"><i class="far fa-plus-square"></i> Invite</a></li>
+            <li><a href="#" class="bot-btn-list-item"><i class="fas fa-pencil-alt"></i> Edit</a></li>
+            <li><a href="#" class="bot-btn-list-item"><i class="fas fa-trash-alt"></i> Delete</a></li>
+        </ul>
+        <p class="bot-title">Tags:</p>
+        <ul class="bot-tag-list">
+            <li><a href="#" class="bot-tag-list-item"><span class="tag-span"><i class="fas fa-tag"></i> Moderation</span></a></li>
+            <li><a href="#" class="bot-tag-list-item"><span class="tag-span"><i class="fas fa-tag"></i> Web Dashboard</span></a></li>
+            <li><a href="#" class="bot-tag-list-item"><span class="tag-span"><i class="fas fa-tag"></i> Logging</span></a></li>
+        </ul>
+        <p class="bot-title">Owners:</p>
+        <ul class="bot-owner-list">
+            <li><a href="#" class="bot-owner-list-item"><img src="https://cdn.discordapp.com/avatars/414764511489294347/4c7c48396c9d4d703713bd319dd6f2da.png?size=128" alt="mraugu profile picture" class="bot-owner-list-item-photo"> MrAugu#9016</a></li>
+        </ul>
+        <p class="bot-title">Long Description:</p>
+        <div class="bot-long-description">
+            <style>
+                .lutu-title {
+                    font-size: 1em;
+                    color: green;
+                    text-align: center;
+                }
+            </style>
+            <p class="lutu-title">LUTU</p>
+        </div>
+    </section> -->
+
+    <!-- Profile Page -->
+    <!-- <section class="profile-container">
+        <div class="profile-image-wrapper"><img class="profile-picture" src="https://cdn.discordapp.com/avatars/414764511489294347/4c7c48396c9d4d703713bd319dd6f2da.png?size=512" alt="mraugu profile picture"></div>
+        <h1 class="profile-name">MrAugu#9016</h1>
+        <p class="profile-rank">Administrator</p>
+        <ul class="profile-stats-list">
+                <li class="profile-stats-list-item">#1<br>Rank</li>
+            <li class="profile-stats-list-item">879<br>Karma</li>
+            <li class="profile-stats-list-item">2<br>Bots</li>
+        </ul>
+
+        <ul class="profile-btn-list">
+                <li><a href="#" class="profile-btn-list-item"><i class="fab fa-chrome"></i> Website</a></li>
+                <li><a href="#" class="profile-btn-list-item"><i class="fab fa-github"></i> GitHub</a></li>
+                <li><a href="#" class="profile-btn-list-item"><i class="fab fa-gitlab"></i> GitLab</a></li>
+                <li><a href="#" class="profile-btn-list-item"><i class="fab fa-reddit-alien"></i> Reddit</a></li>
+                <li><a href="#" class="profile-btn-list-item"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="#" class="profile-btn-list-item"><i class="fab fa-youtube"></i> YouTube</a></li>
+                <li><a href="#" class="profile-btn-list-item"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="#" class="profile-btn-list-item"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+            <li><a href="#" class="profile-btn-list-item"><i class="fas fa-pencil-alt"></i> Edit Profile</a></li>
+        </ul>
+        <section class="card-wrapper">
+            <div class="card">
+                <img src="assets/card-bg.jpg" alt="card background" class="card-bg">
+                <img src="assets/card-img.png" alt="card image" class="card-img">
+                <div class="card-servers">1,356<br>Servers</div><div class="card-votes">145<br>Votes</div>
+                <h1 class="card-name">Discord Bot House</h1>
+                <div class="star-wrapper"><img src="assets/star-yellow.svg" alt="star.svg" class="card-star"> 5</div>
+                <p class="card-description">Some very short description mhm.</p>
+                <div class="tag-wrapper"><span class="tag-red">Moderation</span> <span class="tag-yellow">Economy</span> <span class="tag-blue">Web Dashboard</span> <span class="tag-green">Statistics</span></div>
+                <div class="card-btn-wrapper"><a href="#" class="card-btn">View Page</a><a href="#" class="card-btn">Invite Bot</a></div>
+            </div>
+
+            <div class="card">
+                <img src="assets/card-bg.jpg" alt="card background" class="card-bg">
+                <img src="assets/card-img.png" alt="card image" class="card-img">
+                <div class="card-servers">1,356<br>Servers</div><div class="card-votes">145<br>Votes</div>
+                <h1 class="card-name">Discord Bot House</h1>
+                <div class="star-wrapper"><img src="assets/star-yellow.svg" alt="star.svg" class="card-star"> 5</div>
+                <p class="card-description">Some very short description mhm.</p>
+                <div class="tag-wrapper"><span class="tag-red">Moderation</span> <span class="tag-yellow">Economy</span> <span class="tag-blue">Web Dashboard</span> <span class="tag-green">Statistics</span></div>
+                <div class="card-btn-wrapper"><a href="#" class="card-btn">View Page</a><a href="#" class="card-btn">Invite Bot</a></div>
+            </div>
+        </section>
+    </section> -->
+
+    <!-- Leaderboard -->
+    <section class="leaderboard-container">
+        <h1 class="leaderboard-title"><i class="fas fa-medal"></i> Karma Leaderboard:</h1>
+        <table class="leaderboard-table">
+            <tr class="leaderboard-sector">
+                <th class="leaderboard-element leaderboard-th">Rank</th>
+                <th class="leaderboard-element leaderboard-th">Name</th>
+                <th class="leaderboard-element leaderboard-th">Karma</th>
+            </tr>
+            <tr class="leaderboard-sector">
+                <td class="leaderboard-element">#1</td>
+                <td class="leaderboard-element">MrAugu#9016</td>
+                <td class="leaderboard-element">1,634</td>
+            </tr>
+            <tr class="leaderboard-sector">
+                <td class="leaderboard-element">#2</td>
+                <td class="leaderboard-element">MaC#8311</td>
+                <td class="leaderboard-element">1,114</td>
+            </tr>
+            <tr class="leaderboard-sector">
+                <td class="leaderboard-element">#3</td>
+                <td class="leaderboard-element">Theo#4651</td>
+                <td class="leaderboard-element">964</td>
+            </tr>
+
+            <tr class="leaderboard-sector">
+                    <td class="leaderboard-element">#4</td>
+                    <td class="leaderboard-element">leny32#0001</td>
+                    <td class="leaderboard-element">845</td>
+                </tr>
+                <tr class="leaderboard-sector">
+                    <td class="leaderboard-element">#5</td>
+                    <td class="leaderboard-element">Mat#7341</td>
+                    <td class="leaderboard-element">823</td>
+                </tr>
+                <tr class="leaderboard-sector">
+                    <td class="leaderboard-element">#6</td>
+                    <td class="leaderboard-element">skarff#1122</td>
+                    <td class="leaderboard-element">801</td>
+                </tr>
+
+                <tr class="leaderboard-sector">
+                        <td class="leaderboard-element">#7</td>
+                        <td class="leaderboard-element">Error Newt#1111</td>
+                        <td class="leaderboard-element">769</td>
+                    </tr>
+                    <tr class="leaderboard-sector">
+                        <td class="leaderboard-element">#8</td>
+                        <td class="leaderboard-element">DataCell#4008</td>
+                        <td class="leaderboard-element">734</td>
+                    </tr>
+                    <tr class="leaderboard-sector">
+                        <td class="leaderboard-element">#9</td>
+                        <td class="leaderboard-element">Janel#1437</td>
+                        <td class="leaderboard-element">712</td>
+                    </tr>
+
+                    <tr class="leaderboard-sector">
+                            <td class="leaderboard-element">#10</td>
+                            <td class="leaderboard-element">ImDarkDiamond#0256</td>
+                            <td class="leaderboard-element">609</td>
+                        </tr>
+                        <tr class="leaderboard-sector">
+                            <td class="leaderboard-element">#11</td>
+                            <td class="leaderboard-element">Scιeeeɴceѕ#0001</td>
+                            <td class="leaderboard-element">554</td>
+                        </tr>
+                        <tr class="leaderboard-sector">
+                            <td class="leaderboard-element">#12</td>
+                            <td class="leaderboard-element">Roki_100#0230</td>
+                            <td class="leaderboard-element">233</td>
+                        </tr>
+        </table>
+    </section>
+                    
+    <!-- Beggining of Footer -->
+    <footer>
+        <div class="footer-container">
+            <ul class="footer-list">
+                <li class="footer-category"><strong>CONTACT</strong>
+                    <ul>
+                        <li class="footer-link">support@discordhouse.org</li>
+                        <li class="footer-link"><a href="https://discordhouse.org/contact">https://discordhouse.org/contact</a></li>
+                    </ul>
+                </li>
+                <!-- <li class="footer-category"><strong>ABOUT</strong><br><p class="footer-text">DiscordHouse.org is a bots and developers platform. You can upload your bot to the website, add some details and a description about it which can lead to people adding your bot to their server. Benefit from a good volume of traffic because your bot's page will rank high in search engine results. Customize your page, advance your bot to the front page by purchasing a featured section, become popular, by having your bot added to Discord Bot House right away.</p></li> -->
+                <li class="footer-category"><strong>LEGALS</strong>
+                    <ul>
+                        <li class="footer-link"><a href="/terms">Terms of Service</a></li>
+                        <li class="footer-link"><a href="/privacy">Privacy Policy</a></li>
+                        <li class="footer-link"><a href="/license">Website License</a></li>
+                    </ul>
+                </li>
+                <li class="footer-category"><strong>USEFULL LINKS</strong>
+                    <ul>
+                        <li class="footer-link"><a href="#">How to make a discord bot?</a></li>
+                        <li class="footer-link"><a href="/discordW">Discord Bot House's Discord Server</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <hr class="footer-line">
+            <p class="footer-copyright">Copyright 2019 - MrAugu All Right Reserved</p>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+    <script src="js/main.js"></script>
+</body>
+</html>

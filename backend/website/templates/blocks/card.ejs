@@ -1,0 +1,14 @@
+<div class="card">
+        <img src="<%= botBackground %>" alt="card background" class="card-bg">
+        <img src="<%= botAvatar %>" alt="card image" class="card-img">
+        <div class="card-servers"><%= botServers %><br>Servers</div><div class="card-votes"><%= botVotes %><br>Votes</div>
+        <h1 class="card-name"><%= botName %></h1>
+        <div class="star-wrapper"><i class="fas fa-star card-star"></i> <%= botStar %></div>
+        <p class="card-description"><%= botShort %></p>
+        <div class="tag-wrapper">
+          <% botTags.forEach(t => { %>
+            <span class="tag-green"><%= t %></span>
+          <% }); %>
+        </div>
+        <div class="card-btn-wrapper"><a href="/bot/<%= botId %>" class="card-btn">View Page</a><a href="<%= botInvite %>" class="card-btn">Invite Bot</a></div>
+</div>
