@@ -12,5 +12,5 @@ module.exports.run = async (req, res, renderTemplate, client) => {
 
     if (!displayBot) return res.redirect("/");
 
-    renderTemplate(res, req, "bot/page.ejs", { displayBot, md });
+    renderTemplate(res, req, "bot/page.ejs", { displayBot, md, alertDanger: null, alertSuccess: null });
 };

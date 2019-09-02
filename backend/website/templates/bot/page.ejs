@@ -1,5 +1,17 @@
 <%- include("../blocks/header.ejs", { title: "Home", form: false }) %>
 
+<% if (alertDanger) { %>
+    <div class="alert-danger">
+        <%- alertDanger %>
+    </div>
+<% } %>
+
+<% if (alertSuccess) { %>
+    <div class="alert-success">
+        <%- alertSuccess %>
+    </div>
+<% } %>
+
 <section class="bot-container">
     <div class="bot-img-container"><img src="<%= bot.users.get(displayBot.id).displayAvatarURL({ size: 512 }) %>" alt="bot-image" class="bot-image"></div>
 
@@ -26,11 +38,11 @@
         <li><a href="<%= displayBot.server %>" target="_blank" class="bot-btn-list-item"><i class="fab fa-discord"></i> Join Support Server</a></li>
         <% } %>
         <li><a class="bot-btn-list-item"><i class="fas fa-flag"></i> Report</a></li>
-        <li><a href="#" class="bot-btn-list-item"><i class="fas fa-vote-yea"></i> Upvote</a></li>
+        <li><a href="/bot/<%= displayBot.id %>/upvote" class="bot-btn-list-item"><i class="fas fa-vote-yea"></i> Upvote</a></li>
         <li><a href="<%= displayBot.invite %>" class="bot-btn-list-item"><i class="far fa-plus-square"></i> Invite</a></li>
         <% if (user && displayBot.owners.includes(user.id) || user && displayBot.mainOwner === user.id) { %>
-        <li><a href="#" class="bot-btn-list-item"><i class="fas fa-pencil-alt"></i> Edit</a></li>
-        <li><a href="#" class="bot-btn-list-item"><i class="fas fa-trash-alt"></i> Delete</a></li>
+        <li><a href="/bot/<%= displayBot.id %>/edit" class="bot-btn-list-item"><i class="fas fa-pencil-alt"></i> Edit</a></li>
+        <li><a href="/bot/<%= displayBot.id %>/delete" class="bot-btn-list-item"><i class="fas fa-trash-alt"></i> Delete</a></li>
         <% } %>
     </ul>
     <p class="bot-title">Tags:</p>
