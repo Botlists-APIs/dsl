@@ -109,11 +109,6 @@ module.exports.start = (client) => {
       process.nextTick(() => done(null, profile));
     }))
 
-  app.use((req, res, next) => {
-    client.channels.get("572380571074953217").send(`[WEBSITE]: New request is being served.`);
-    next();
-  });
-
   app.use(session({
     store: new MemoryStore({ checkPeriod: 86400000 }),
     secret: client.config.dashboard.sessionSecret,
@@ -186,6 +181,8 @@ module.exports.start = (client) => {
   app.get("/bot/:term/edit", checkAuth, (req, res) => botEditRoute.run(req, res, renderTemplate, client));
   app.post("/bot/:term/edit", checkAuth, (req, res) => botEditPostRoute.run(req, res, renderTemplate, validateBotForID, client));
   app.get("/bot/:term/upvote", checkAuth, (req, res) => upvoteRoute.run(req, res, renderTemplate, client));
-  
+  app.get("*", (req, res) => {
+    renderTemplate(res, req, "404.ejs");
+  });
   client.site = app.listen(client.config.dashboard.port, null, null, () => console.log("List is up and running!"));
 };

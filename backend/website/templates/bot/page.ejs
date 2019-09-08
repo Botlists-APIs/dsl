@@ -48,14 +48,14 @@
     <p class="bot-title">Tags:</p>
     <ul class="bot-tag-list">
         <% for (var i = 0; i < displayBot.tags.length; i++) { %>
-            <li><a href="#" class="bot-tag-list-item"><span class="tag-span"><i class="fas fa-tag"></i> <%= displayBot.tags[i] %></span></a></li>
+            <li><a class="bot-tag-list-item"><span class="tag-span"><i class="fas fa-tag"></i> <%= displayBot.tags[i] %></span></a></li>
         <% } %>
     </ul>
     <p class="bot-title">Owners:</p>
     <ul class="bot-owner-list">
         <li><a href="/profile/<%= displayBot.mainOwner %>" class="bot-owner-list-item"><img src="<%= bot.users.get(displayBot.mainOwner) ? bot.users.get(displayBot.mainOwner).displayAvatarURL({ size: 128 }) : '' %>" alt="" class="bot-owner-list-item-photo"> <%= bot.users.get(displayBot.mainOwner) ? bot.users.get(displayBot.mainOwner).tag : 'Unknown#0000' %></a></li>
         <% for (var i = 0; i < displayBot.owners.length; i++) { %>
-            <li><a href="/profile/<%= displayBot.owners[i] %>" class="bot-owner-list-item"><img src="<%= bot.users.get(displayBot.owners[i]) ? bot.users.get(displayBot.owners[i]).displayAvatarURL({ size: 128 }) : '' %>" alt="" class="bot-owner-list-item-photo"> <%= bot.users.get(displayBot.owners[i]) ? bot.users.get(displayBot.owners[i]).tag : 'Unknown#0000' %></a></li>
+            <li><a class="bot-owner-list-item"><img src="<%= bot.users.get(displayBot.owners[i]) ? bot.users.get(displayBot.owners[i]).displayAvatarURL({ size: 128 }) : '' %>" alt="" class="bot-owner-list-item-photo"> <%= bot.users.get(displayBot.owners[i]) ? bot.users.get(displayBot.owners[i]).tag : 'Unknown#0000' %></a></li>
         <% } %>
     </ul>
     <p class="bot-title">Long Description:</p>
