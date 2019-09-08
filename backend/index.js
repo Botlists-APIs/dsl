@@ -19,21 +19,21 @@ fs.readdir("./events/", (err, files) => {
     client.on(eventName, (...args) => eventFunction.run(client, ...args));
   });
 });
-//
-// fs.readdir("./commands/", (err, files) => {
-// 	if(err) console.log(err);
-// 	let jsfile = files.filter(f => f.split(".").pop() === "js")
-// 	if(jsfile.length <= 0){
-// 		console.log("No commands were found!");
-// 		return;
-// 	}
-//
-// 	jsfile.forEach((f, i) => {
-// 		let props = require(`./commands/${f}`);
-// 		commandsLoaded += 1;
-// 		client.commands.set(props.help.name, props);
-// 	});
-// });
+
+fs.readdir("./commands/", (err, files) => {
+	if(err) console.log(err);
+	let jsfile = files.filter(f => f.split(".").pop() === "js")
+	if(jsfile.length <= 0){
+		console.log("No commands were found!");
+		return;
+	}
+
+	jsfile.forEach((f, i) => {
+		let props = require(`./commands/${f}`);
+		commandsLoaded += 1;
+		client.commands.set(props.help.name, props);
+	});
+});
 
 console.log(`Loaded ${eventsLoaded} events.`);
 console.log(`Loaded ${commandsLoaded} commands.`);
