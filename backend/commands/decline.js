@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bots = require("../models/bots");
-const profiles = require("../models/profile");
+const profiles = require("../models/profiles.js");
 
 module.exports.run = async (client, message, args, reply) => {
   const userProfile = await profiles.findOne({ id: message.author.id });
@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args, reply) => {
 
   const bot1 = await bots.findOne({ id: bot });
   await bots.findOneAndDelete({ id: bot });
-  
+
   if (!bot1) return reply("<:redTick:568885082321059865> The specified bot was not found in the queue.")
 
   const bt = await client.users.fetch(bot1.id);

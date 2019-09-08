@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const request = require('request');
-const profiles = require("../models/profile.js");
+const profiles = require("../models/profiles.js");
 
 module.exports.run = async (client, message, args, reply) => {
   const userProfile = await profiles.findOne({ id: message.author.id });

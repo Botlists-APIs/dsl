@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const profiles = require("../models/profile.js");
+const profiles = require("../models/profiles.js");
 
 module.exports.run = async (client, message, args, reply) => {
   var bot = message.mentions.users.first() || { id: args[0] };

@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bots = require("../models/bots");
-const profiles = require("../models/profile");
+const profiles = require("../models/profiles.js");
 
 module.exports.run = async (client, message, args, reply) => {
 
@@ -19,8 +19,8 @@ module.exports.run = async (client, message, args, reply) => {
     await res.save().catch(e => console.log(e));
     if(args[1] == 'add')  reply(`${res.name} was added to the featured bots.`)
     if(args[1] == 'del')  reply(`${res.name} was removed from the featured bots.`)
-   
-   
+
+
   });
 
 

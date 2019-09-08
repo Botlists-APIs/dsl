@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bots = require("../models/bots");
-const profiles = require("../models/profile");
+const profiles = require("../models/profiles.js");
 
 module.exports.run = async (client, message, args, reply) => {
 
@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args, reply) => {
     res.vanityUrl = args[1];
     await res.save().catch(e => console.log(e));
     reply(`<:greenTick:568885198519926784> The vanity URL has been set to: \nhttps://discordhouse.org/bot/${args[1]}`)
-   
+
   });
 
 
